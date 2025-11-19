@@ -1,0 +1,11 @@
+python
+hello
+world
+jungle
+animal
+puzzle
+rocket
+banana
+people
+school
+friend
