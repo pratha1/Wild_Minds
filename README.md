@@ -96,26 +96,11 @@ Date	Time	Number of Moves	Result
 
 ## 🧪 Cognitive Metrics Tracked
 
-- **Response Time**: Speed of decision-making
 - **Success Rate**: Win/loss patterns
 - **Attempts Required**: Problem-solving efficiency
 - **Move Count**: Strategic planning ability
 - **Temporal Patterns**: Performance consistency over time
 
-## 👥 Development Team
-
-Developed collaboratively in an Agile environment with focus on:
-- User interaction system design
-- Gameplay analytics implementation
-- Debug and quality assurance
-- Cognitive health research integration
-
-## 🎯 Use Cases
-
-- **Early Detection**: Identify potential cognitive decline patterns
-- **Self-Monitoring**: Track personal cognitive health over time
-- **Research**: Collect data for dementia pattern analysis
-- **Wellness**: Engage in brain-healthy activities
 
 ## 🔮 Future Enhancements
 
@@ -124,16 +109,4 @@ Developed collaboratively in an Agile environment with focus on:
 - Personalized cognitive health reports
 - Mobile app development
 - Healthcare provider integration
-
-## 📝 License
-
-This project is part of cognitive health research and development.
-
-## 🤝 Contributing
-
-Interested in contributing? Reach out to discuss cognitive health monitoring features and improvements.
-
----
-
-**Note**: This tool is designed for tracking and awareness purposes. It is not a substitute for professional medical diagnosis. Consult healthcare providers for concerns about cognitive health.
 
