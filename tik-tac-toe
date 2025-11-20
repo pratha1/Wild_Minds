@@ -94,20 +94,6 @@
     <div class="container">
         <h1>Tic Tac Toe</h1>
         
-        <div class="mode-selector">
-            <button onclick="setMode('two-player')" id="two-player-btn" class="mode-btn active">2 Players</button>
-            <button onclick="setMode('one-player')" id="one-player-btn" class="mode-btn">vs Computer</button>
-        </div>
-        
-        <div id="difficulty" style="display: none; text-align: center; margin: 10px 0;">
-            <label style="color: #333; font-weight: bold;">Difficulty: </label>
-            <select id="difficulty-select" onchange="changeDifficulty()">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard" selected>Hard</option>
-            </select>
-        </div>
-        
         <div id="print">Player X Turn</div>
         
         <div class="board">
@@ -213,14 +199,24 @@
 
         function logGame(result) {
             const now = new Date();
-            const dateStr = now.toISOString().split('T')[0];
-            const timeStr = now.toTimeString().split(' ')[0];
+            const dateStr = now.toLocaleDateString('en-US');
+            const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+            
+            // Determine Player X result
+            let playerXResult;
+            if (result === 'Player X Won') {
+                playerXResult = 'Player X Won';
+            } else if (result === 'Player O Won') {
+                playerXResult = 'Player X LOSS';
+            } else {
+                playerXResult = 'Tie';
+            }
             
             gameHistory.push({
                 date: dateStr,
                 time: timeStr,
                 moves: moveCount,
-                result: result
+                result: playerXResult
             });
             
             updateStats();
@@ -243,17 +239,17 @@
                 return;
             }
             
-            let csv = 'Date,Time,Number of Moves,Result\n';
+            let csv = 'Date\tTime\tNumber of Moves\tResult\n';
             
             gameHistory.forEach(game => {
-                csv += `${game.date},${game.time},${game.moves},${game.result}\n`;
+                csv += `${game.date}\t${game.time}\t${game.moves}\t${game.result}\n`;
             });
             
             const blob = new Blob([csv], { type: 'text/csv' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `tictactoe_log_${new Date().toISOString().split('T')[0]}.csv`;
+            a.download = 'tic.csv';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
